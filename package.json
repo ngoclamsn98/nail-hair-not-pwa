@@ -10,13 +10,10 @@
   },
   "dependencies": {
     "vue": "^3.4.29",
-    "@vee-validate/zod": "^4.12.6",
     "axios": "^1.6.8",
     "vee-validate": "^4.12.6",
-    "vue-nprogress": "^0.2.0",
     "vue-router": "^4.0.13",
-    "vuex": "^4.0.2",
-    "zod": "^3.22.4"
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
