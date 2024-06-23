@@ -7,14 +7,14 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./config/interceptors";
 import router from "./routes";
-import store from "./store";
+// import store from "./store";
 import "./style.css";
 const app = createApp(App);
 // app.use(Vue3ConfirmDialog);
 // app.use(QrReader);
 // app.use(VWave);
 app.use(router);
-app.use(store);
+// app.use(store);
 // app.use(ModalPlugin);
 
 app.mount("#app");
