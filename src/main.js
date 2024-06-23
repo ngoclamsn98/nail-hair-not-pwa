@@ -14,7 +14,7 @@ const app = createApp(App);
 // app.use(QrReader);
 // app.use(VWave);
 app.use(router);
-app.use(store);
+// app.use(store);
 // app.use(ModalPlugin);
 
 app.mount("#app");
