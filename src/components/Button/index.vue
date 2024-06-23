@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-full justify-center flex"
-    v-if="false"
+    v-if="store.state.loading.isLoading && isLoading"
   >
     <div class="w-[45px]">
       <Loading />
@@ -24,8 +24,8 @@ import { useStore } from "vuex";
 defineProps({
   isLoading: {
     type: Boolean,
-    default: true,
-  },
-});
+    default: true
+  }
+})
 const store = useStore();
 </script>

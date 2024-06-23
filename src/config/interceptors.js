@@ -4,7 +4,7 @@ import router from "@/routes";
 import store from "@/store";
 import storageUtils from "@/utils/storageUtils";
 import axios from "axios";
-// import NProgress from "nprogress";
+import NProgress from "nprogress";
 import { LOGIN } from "@/routes/path";
 
 let refreshTokenRequest = null;
@@ -48,8 +48,8 @@ axiosInstance.interceptors.request.use(
     ) {
       store.commit("loading/setLoading", { isLoading: true });
     } else {
-      // NProgress.start();
-      // NProgress.set(1);
+      NProgress.start();
+      NProgress.set(1);
     }
     const userToken = storageUtils.get(STORAGE_KEY.TOKEN_DATA)?.accessToken;
     if (userToken) {
@@ -58,7 +58,7 @@ axiosInstance.interceptors.request.use(
     return config;
   },
   function (error) {
-    // NProgress.done();
+    NProgress.done();
     store.commit("loading/setLoading", { isLoading: false });
     return Promise.reject(error);
   }
@@ -67,12 +67,12 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   function (config) {
     store.commit("loading/setLoading", { isLoading: false });
-    // NProgress.done();
+    NProgress.done();
     return config;
   },
   async function (error) {
     const originalRequest = error.config;
-    // NProgress.done();
+    NProgress.done();
     store.commit("loading/setLoading", { isLoading: false });
     const errorData = error?.response?.data;
     if (
