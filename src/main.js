@@ -8,7 +8,7 @@ import App from "./App.vue";
 import "./config/interceptors";
 import router from "./routes";
 // import store from "./store";
-// import "./style.css";
+import "./style.css";
 const app = createApp(App);
 // app.use(Vue3ConfirmDialog);
 // app.use(QrReader);
