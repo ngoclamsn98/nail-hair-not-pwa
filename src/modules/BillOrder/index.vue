@@ -146,7 +146,7 @@ watch(values, (newValues) => {
 const onSubmit = (e) => {
   handleNextFocus(
     e,
-    handleSubmit((values) => {
+    handleSubmit(() => {
       const result = handleFormData(values);
 
       if (typeof result === "string") {
