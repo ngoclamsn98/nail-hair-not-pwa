@@ -31,7 +31,7 @@ export const handleProductPackage = (packages: PackageProduct[]) => {
   packages.forEach((packageItem: PackageProduct) => {
     packageItem.categories.forEach((category) => {
       category.products.forEach((product) => {
-        if (product.id) {
+        if (product.id && product.price) {
           productList.push({
             id: product.id,
             packageId: packageItem.id,

@@ -109,7 +109,7 @@ const handleTotalAmount = (values) => {
   values.packages.forEach((packages) => {
     packages?.categories?.forEach((category) => {
       category?.products?.forEach((product) => {
-        if (category.id && product.id && product.price) {
+        if (product.id && product.price) {
           checkedList.push(product);
         }
       });
@@ -130,15 +130,7 @@ const handleTotalAmount = (values) => {
 let timeout;
 
 watch(values, (newValues) => {
-  const ids = handleCheckedValue(newValues);
-  const keyValue = mapValueProductToCategory(
-    ids.map((id) => id && id.toString()),
-    data.categories
-  );
-
-  Object.keys(keyValue).forEach((key, index) => {
-    setFieldValue(key, Object.values(keyValue)[index]);
-  });
+  handleCheckedValue(newValues);
 
   const amountVnd = handleTotalAmount(newValues);
 
@@ -202,7 +194,7 @@ const onSubmit = (e) => {
         file: file,
         saleType: SALE_TYPE.PACKAGE,
         products: JSON.stringify(products),
-        note: values.note,
+        note: values?.note || "",
       });
 
       const handleOnCreateSale = (data) => {

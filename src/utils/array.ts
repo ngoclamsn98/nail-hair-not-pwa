@@ -76,26 +76,21 @@ export const mapValueProductToCategory = (arr, obj) => {
 
 export const handleFormData = (values) => {
   let isValid = true;
+  let categories: any = [];
+
   values?.packages?.forEach((item) => {
     item?.categories?.forEach((category) => {
       category?.products?.forEach((product) => {
         if (product.id && !product.price) {
           isValid = false;
+        } else if (product.id && product.price) {
+          categories.push(product.id);
         }
       });
     });
   });
 
   if (!isValid) return "Sản phẩm đã chọn thì phải nhập giá!";
-
-  let categories: any = [];
-  values?.packages?.forEach((item) => {
-    item?.categories?.forEach((category) => {
-      if (category.id) {
-        categories.push(category);
-      }
-    });
-  });
 
   if (!categories.length) {
     return "Bạn phải chọn gói dịch vụ!";

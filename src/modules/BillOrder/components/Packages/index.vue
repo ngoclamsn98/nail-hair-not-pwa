@@ -25,12 +25,7 @@
         :key="category.id"
         class="flex flex-col"
       >
-        <CheckBox
-          :label="category.nameApp"
-          :name="`packages.${index}.categories.${categoryIndex}.id`"
-          :checkedValue="category.id"
-          :disabled="true"
-        />
+        <b class="font-bold">{{ category.nameApp }}</b>
         <InputHidden
           :name="`packages.${index}.id`"
           :defaultValue="collapse.id"
