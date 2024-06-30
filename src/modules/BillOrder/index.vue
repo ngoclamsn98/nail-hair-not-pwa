@@ -175,13 +175,19 @@ const onSubmit = (e) => {
       const products = handleProductPackage(values.packages);
 
       let file = null;
-      console.log(isBase64(image.value), "=isBase64(image.value)");
       if (isBase64(image.value)) {
         file = convertBase64ToFileBinary(image.value);
-        console.log(file, "fileConvert");
       } else {
-        file = image.value || null;
-        console.log(file, "fileNULL");
+        let imageRemoveBase64 = null;
+        if (image.value.startsWith("data:image/jpeg;base64,")) {
+          imageRemoveBase64 = image.value.replace(
+            "data:image/jpeg;base64,",
+            ""
+          );
+        }
+        file = imageRemoveBase64
+          ? convertBase64ToFileBinary(imageRemoveBase64)
+          : null;
       }
 
       const storeId = storageUtils.get(STORAGE_KEY.STORE_DETAIL)?.id;
