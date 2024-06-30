@@ -82,9 +82,6 @@
   </div>
 </template>
 <script setup>
-import InputCategory from "@/components/InputCategory";
-import InputNumber from "@/components/InputNumber";
-import InputPhoneNumber from "@/components/InputPhoneNumber";
 import InputText from "@/components/InputText";
 import Radio from "@/components/Radio";
 import TextArea from "@/components/TextArea";

@@ -45,11 +45,7 @@ import { BillOrderReqDto, SALE_TYPE } from "@/declaration";
 import router from "@/routes";
 import { HOME } from "@/routes/path";
 import { handleConvertVndToUSD } from "@/utils/api";
-import {
-  handleFormData,
-  mapValueProductToCategory,
-  productToKey,
-} from "@/utils/array";
+import { handleFormData, productToKey } from "@/utils/array";
 import { handleNextFocus } from "@/utils/handleNextFocus";
 import { convertBase64ToFileBinary } from "@/utils/resizeImage";
 import { useForm } from "vee-validate";

@@ -70,8 +70,6 @@
     
 <script setup>
 import CheckBox from "@/components/CheckBox";
-import InputCategory from "@/components/InputCategory";
-import InputHidden from "@/components/InputHidden";
 import { numberWithCommas } from "@/utils/number";
 import { inject } from "vue";
 import { Collapse } from "vue-collapsed";
