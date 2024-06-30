@@ -26,10 +26,9 @@
         class="flex flex-col"
       >
         <b class="font-bold">{{ category.nameApp }}</b>
-        <input
-          class="hidden"
+        <InputHidden
           :name="`packages.${index}.id`"
-          :value="collapse.id"
+          :defaultValue="collapse.id"
         />
         <ul class="ml-[30px] flex flex-col mt-[5px]">
           <li
@@ -46,17 +45,17 @@
               class="flex justify-end text-[13px]"
               v-if="product.salesPrice"
             >{{numberWithCommas(product.salesPrice) }} vnđ
-              <input
+              <InputCategory
                 :name="`packages.${index}.categories.${categoryIndex}.products.${position}.price`"
                 class="hidden"
-                :value="product.salesPrice"
+                :defaultValue="product.salesPrice"
               />
             </div>
             <div
               v-else
               class="flex w-full justify-end"
             >
-              <input
+              <InputCategory
                 :name="`packages.${index}.categories.${categoryIndex}.products.${position}.price`"
                 :disabled="!checkedArr.includes(product.id)"
               />
@@ -70,6 +69,8 @@
     
 <script setup>
 import CheckBox from "@/components/CheckBox";
+import InputCategory from "@/components/InputCategory";
+import InputHidden from "@/components/InputHidden";
 import { numberWithCommas } from "@/utils/number";
 import { inject } from "vue";
 import { Collapse } from "vue-collapsed";

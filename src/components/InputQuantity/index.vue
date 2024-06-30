@@ -38,9 +38,7 @@ watch(numericValue, (newValue) => {
     numericValue.value = 0;
     value.value = 0;
   } else {
-    // numericValue.value = newValue.toString().replace(/[^\d]/g, "");
-    numericValue.value = newValue.toString();
-
+    numericValue.value = newValue.toString().replace(/[^\d]/g, "");
     numericValue.value = numberWithCommas(+numericValue.value);
 
     if (numericValue.value.length >= MAX_LENGTH) {

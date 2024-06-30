@@ -8,13 +8,13 @@
         class="flex justify-start items-start w-[90%] h-full flex-col m-auto"
         @submit.prevent="onSubmit"
       >
-        <div
+        <!-- <div
           class="flex justify-center w-full"
           v-if="store.state.loading.isLoading"
         >
           <Loading />
         </div>
-        <!-- <Packages
+        <Packages
           :collapses="data.collapses"
           v-else
         /> -->
@@ -146,7 +146,7 @@ watch(values, (newValues) => {
 const onSubmit = (e) => {
   handleNextFocus(
     e,
-    handleSubmit(() => {
+    handleSubmit((values) => {
       const result = handleFormData(values);
 
       if (typeof result === "string") {
