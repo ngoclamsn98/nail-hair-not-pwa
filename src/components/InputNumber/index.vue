@@ -48,13 +48,13 @@ const props = defineProps({
 });
 
 function removeNonNumeric(input) {
+  console.log(input, "resultresult");
   let result = "";
   for (let i = 0; i < input.length; i++) {
     if (!isNaN(input[i]) && input[i] !== " ") {
       result += input[i];
     }
   }
-  console.log(result, "resultresult");
   return result;
 }
 
@@ -70,7 +70,6 @@ watch(numericValue, (newValue) => {
   }
   try {
     numericValue.value = removeNonNumeric(newValue);
-    console.log(numericValue.value);
     numericValue.value = numberWithCommas(numericValue.value);
   } catch (error) {
     console.log(error);
