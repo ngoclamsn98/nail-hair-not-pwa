@@ -47,6 +47,16 @@ const props = defineProps({
   disabled: { type: Boolean, default: false },
 });
 
+function removeNonNumeric(input) {
+  let result = "";
+  for (let i = 0; i < input.length; i++) {
+    if (!isNaN(input[i]) && input[i] !== " ") {
+      result += input[i];
+    }
+  }
+  return result;
+}
+
 const { value, errorMessage } = useField(() => props.name);
 
 const numericValue = ref(value.value);
@@ -58,8 +68,7 @@ watch(numericValue, (newValue) => {
     return;
   }
   try {
-    const regex = new RegExp(/[^\d]/g);
-    numericValue.value = (newValue || 0)?.toString().replace(regex, "");
+    numericValue.value = removeNonNumeric(newValue);
     numericValue.value = numberWithCommas(numericValue.value);
   } catch (error) {
     console.log(error);
