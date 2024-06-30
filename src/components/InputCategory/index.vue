@@ -54,7 +54,9 @@ watch(numericValue, (newValue) => {
     value.value = 0;
     return;
   }
-  numericValue.value = newValue.toString().replace(/[^\d]/g, "");
+  // numericValue.value = newValue.toString().replace(/[^\d]/g, "");
+  numericValue.value = newValue.toString();
+
   numericValue.value = numberWithCommas(+numericValue.value);
 
   if (numericValue.value.length >= MAX_LENGTH) {

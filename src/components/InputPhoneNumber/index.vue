@@ -51,7 +51,8 @@ const { value, errorMessage } = useField(() => props.name);
 const numericValue = ref(value.value);
 
 watch(numericValue, (newValue) => {
-  numericValue.value = newValue.toString().replace(/[^\d]/g, "");
+  // numericValue.value = newValue.toString().replace(/[^\d]/g, "");
+  numericValue.value = newValue.toString();
 
   if (numericValue.value.length >= MAX_LENGTH) {
     numericValue.value = numericValue.value.slice(0, MAX_LENGTH);

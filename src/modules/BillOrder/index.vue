@@ -160,18 +160,18 @@ const onSubmit = (e) => {
         return;
       }
 
-      if (
-        values?.clientPhoneNumber &&
-        !/^(?:\d{10,12}|)$/.test(values.clientPhoneNumber)
-      ) {
-        app.$confirm({
-          title: "Số điện thoại không hợp lệ!",
-          button: {
-            no: "Ok",
-          },
-        });
-        return;
-      }
+      // if (
+      //   values?.clientPhoneNumber &&
+      //   !/^(?:\d{10,12}|)$/.test(values.clientPhoneNumber)
+      // ) {
+      //   app.$confirm({
+      //     title: "Số điện thoại không hợp lệ!",
+      //     button: {
+      //       no: "Ok",
+      //     },
+      //   });
+      //   return;
+      // }
 
       const products = handleProductPackage(values.packages);
 
