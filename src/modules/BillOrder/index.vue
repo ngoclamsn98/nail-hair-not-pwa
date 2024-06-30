@@ -130,6 +130,7 @@ const handleTotalAmount = (values) => {
 let timeout;
 
 watch(values, (newValues) => {
+  console.log("==========newValues", newValues);
   handleCheckedValue(newValues);
 
   const amountVnd = handleTotalAmount(newValues);
