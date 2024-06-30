@@ -24,6 +24,7 @@
             v-if="isMoney"
           >vnđ</div>
         </div>
+        {{ numericValue }}
         <span class="text-red text-[13px]">{{ errorMessage }}</span>
       </div>
     </div>
@@ -52,7 +53,6 @@ const { value, errorMessage } = useField(() => props.name);
 const numericValue = ref(value.value);
 
 watch(numericValue, (newValue) => {
-  console.log("=======newValue", newValue);
   if (!newValue) {
     numericValue.value = 0;
     value.value = 0;
@@ -70,10 +70,5 @@ watch(numericValue, (newValue) => {
   } else {
     value.value = +numericValue.value;
   }
-  console.log("=======numericValue", numericValue);
-});
-
-watch(() => {
-  console.log("aaaaa");
 });
 </script>

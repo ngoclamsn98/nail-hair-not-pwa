@@ -75,6 +75,8 @@ export const mapValueProductToCategory = (arr, obj) => {
 };
 
 export const handleFormData = (values) => {
+  console.log(values, "valuesvalues");
+
   let isValid = true;
   let categories: any = [];
 
