@@ -19,7 +19,7 @@
   </div>
   <div class="flex w-full border-t border-gray-200">
     <div class="w-[90%] mx-auto">
-      <InputNumber
+      <InputPhoneNumber
         name="discount"
         label="Discount"
         :classes="classes"
@@ -29,7 +29,7 @@
   </div>
   <div class="flex w-full border-t border-gray-200">
     <div class="w-[90%] mx-auto">
-      <InputNumber
+      <InputPhoneNumber
         name="tip"
         label="Tip"
         :classes="classes"
@@ -80,7 +80,7 @@
 </template>
 <script setup>
 import InputCategory from "@/components/InputCategory";
-import InputNumber from "@/components/InputNumber";
+// import InputNumber from "@/components/InputNumber";
 import InputPhoneNumber from "@/components/InputPhoneNumber";
 import InputText from "@/components/InputText";
 import Radio from "@/components/Radio";
