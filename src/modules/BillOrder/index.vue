@@ -8,7 +8,7 @@
         class="flex justify-start items-start w-[90%] h-full flex-col m-auto"
         @submit.prevent="onSubmit"
       >
-        <!-- <div
+        <div
           class="flex justify-center w-full"
           v-if="store.state.loading.isLoading"
         >
@@ -17,7 +17,7 @@
         <Packages
           :collapses="data.collapses"
           v-else
-        /> -->
+        />
         <Camera />
         <InformationSale
           :total="total"
@@ -64,7 +64,7 @@ import {
 } from "vue";
 import { useStore } from "vuex";
 import Camera from "./components/Camera";
-// import Packages from "./components/Packages";
+import Packages from "./components/Packages";
 import { handleProductPackage, isBase64 } from "./utils";
 import storageUtils from "@/utils/storageUtils";
 import { STORAGE_KEY } from "@/constants";
@@ -144,7 +144,7 @@ watch(values, (newValues) => {
 });
 
 const onSubmit = (e) => {
-  console.log(values, "=========");
+  console.log(values, "values");
   handleNextFocus(
     e,
     handleSubmit((values) => {
