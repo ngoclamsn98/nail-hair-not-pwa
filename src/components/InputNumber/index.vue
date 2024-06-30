@@ -54,6 +54,7 @@ function removeNonNumeric(input) {
       result += input[i];
     }
   }
+  console.log(result, "resultresult");
   return result;
 }
 
@@ -69,6 +70,7 @@ watch(numericValue, (newValue) => {
   }
   try {
     numericValue.value = removeNonNumeric(newValue);
+    console.log(numericValue.value);
     numericValue.value = numberWithCommas(numericValue.value);
   } catch (error) {
     console.log(error);
