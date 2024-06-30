@@ -144,7 +144,6 @@ watch(values, (newValues) => {
 });
 
 const onSubmit = (e) => {
-  console.log(values, "values");
   handleNextFocus(
     e,
     handleSubmit((values) => {
@@ -176,11 +175,13 @@ const onSubmit = (e) => {
       const products = handleProductPackage(values.packages);
 
       let file = null;
-
+      console.log(isBase64(image.value), "=isBase64(image.value)");
       if (isBase64(image.value)) {
         file = convertBase64ToFileBinary(image.value);
+        console.log(file, "fileConvert");
       } else {
         file = image.value || null;
+        console.log(file, "fileNULL");
       }
 
       const storeId = storageUtils.get(STORAGE_KEY.STORE_DETAIL)?.id;
