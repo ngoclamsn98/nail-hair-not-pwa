@@ -144,6 +144,7 @@ watch(values, (newValues) => {
 });
 
 const onSubmit = (e) => {
+  console.log(values, "=========");
   handleNextFocus(
     e,
     handleSubmit((values) => {
