@@ -10,7 +10,8 @@
   </div>
   <div class="flex w-full border-t border-gray-200">
     <div class="w-[90%] mx-auto">
-      <InputPhoneNumber
+      <input
+        class="hidden"
         name="clientPhoneNumber"
         label="Phone"
         :classes="classes"
@@ -19,7 +20,8 @@
   </div>
   <div class="flex w-full border-t border-gray-200">
     <div class="w-[90%] mx-auto">
-      <InputNumber
+      <input
+        class="hidden"
         name="discount"
         label="Discount"
         :classes="classes"
@@ -29,7 +31,8 @@
   </div>
   <div class="flex w-full border-t border-gray-200">
     <div class="w-[90%] mx-auto">
-      <InputNumber
+      <input
+        class="hidden"
         name="tip"
         label="Tip"
         :classes="classes"
@@ -43,7 +46,7 @@
       <div class="flex flex-col text-gray-500 text-[14px]">
         <span class="ml-[10px]">
           {{ numberWithCommas(total) }} VNĐ
-          <InputCategory
+          <input
             :name="`cash`"
             class="hidden"
             :disabled="true"

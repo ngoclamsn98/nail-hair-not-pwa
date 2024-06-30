@@ -26,9 +26,10 @@
         class="flex flex-col"
       >
         <b class="font-bold">{{ category.nameApp }}</b>
-        <InputHidden
+        <input
+          class="hidden"
           :name="`packages.${index}.id`"
-          :defaultValue="collapse.id"
+          :value="collapse.id"
         />
         <ul class="ml-[30px] flex flex-col mt-[5px]">
           <li
@@ -45,17 +46,17 @@
               class="flex justify-end text-[13px]"
               v-if="product.salesPrice"
             >{{numberWithCommas(product.salesPrice) }} vnđ
-              <InputCategory
+              <input
                 :name="`packages.${index}.categories.${categoryIndex}.products.${position}.price`"
                 class="hidden"
-                :defaultValue="product.salesPrice"
+                :value="product.salesPrice"
               />
             </div>
             <div
               v-else
               class="flex w-full justify-end"
             >
-              <InputCategory
+              <input
                 :name="`packages.${index}.categories.${categoryIndex}.products.${position}.price`"
                 :disabled="!checkedArr.includes(product.id)"
               />
