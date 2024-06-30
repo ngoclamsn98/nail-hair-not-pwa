@@ -8,7 +8,7 @@
       <div class="flex flex-col h-[60px] flex-1 ">
         <div class="relative">
           <input
-            v-model="numericValue"
+            v-model="value"
             :placeholder="placeholder"
             :data-focus="name"
             :name="name"
@@ -49,26 +49,26 @@ const props = defineProps({
 
 const { value, errorMessage } = useField(() => props.name);
 
-const numericValue = ref(value.value);
+// const numericValue = ref(value.value);
 
-watch(numericValue, (newValue) => {
-  if (!newValue) {
-    numericValue.value = 0;
-    value.value = 0;
-    return;
-  }
-  // const regex = new RegExp(/[^\d]/g);
-  // numericValue.value = newValue.toString().replace(regex, "");
-  numericValue.value = numberWithCommas(+numericValue.value);
+// watch(numericValue, (newValue) => {
+//   if (!newValue) {
+//     numericValue.value = 0;
+//     value.value = 0;
+//     return;
+//   }
+//   // const regex = new RegExp(/[^\d]/g);
+//   // numericValue.value = newValue.toString().replace(regex, "");
+//   numericValue.value = numberWithCommas(+numericValue.value);
 
-  if (numericValue.value.length >= MAX_LENGTH) {
-    numericValue.value = numericValue.value.slice(0, MAX_LENGTH);
-  }
+//   if (numericValue.value.length >= MAX_LENGTH) {
+//     numericValue.value = numericValue.value.slice(0, MAX_LENGTH);
+//   }
 
-  if (numericValue.value.toString().includes(",")) {
-    value.value = +numericValue.value.split(",").join("");
-  } else {
-    value.value = +numericValue.value;
-  }
-});
+//   if (numericValue.value.toString().includes(",")) {
+//     value.value = +numericValue.value.split(",").join("");
+//   } else {
+//     value.value = +numericValue.value;
+//   }
+// });
 </script>
