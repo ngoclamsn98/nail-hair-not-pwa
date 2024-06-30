@@ -52,14 +52,17 @@ const { value, errorMessage } = useField(() => props.name);
 const numericValue = ref(value.value);
 
 watch(numericValue, (newValue) => {
-  console.log(numericValue.value, newValue, value.value, "numericValue");
-  // if (!newValue) {
-  //   numericValue.value = 0;
-  //   value.value = 0;
-  //   return;
-  // }
-  // const regex = new RegExp(/[^\d]/g);
-  // numericValue.value = newValue.toString().replace(regex, "");
+  if (!newValue) {
+    numericValue.value = 0;
+    value.value = 0;
+    return;
+  }
+  try {
+    const regex = new RegExp(/[^\d]/g);
+    numericValue.value = (newValue || 0)?.toString().replace(regex, "");
+  } catch (error) {
+    console.log(error);
+  }
   // numericValue.value = numberWithCommas(+numericValue.value);
 
   // if (numericValue.value.length >= MAX_LENGTH) {
