@@ -59,8 +59,8 @@ watch(numericValue, (newValue) => {
   }
   try {
     const regex = new RegExp(/[^\d]/g);
-    console.log(newValue, "newValue");
     numericValue.value = (newValue || 0)?.toString().replace(regex, "");
+    console.log(numericValue.value, "===");
   } catch (error) {
     console.log(error);
   }
