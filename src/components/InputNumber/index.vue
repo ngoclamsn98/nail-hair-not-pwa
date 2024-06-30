@@ -60,6 +60,7 @@ watch(numericValue, (newValue) => {
   try {
     const regex = new RegExp(/[^\d]/g);
     numericValue.value = (newValue || 0)?.toString().replace(regex, "");
+    numericValue.value = numberWithCommas(+numericValue.value);
     console.log(numericValue.value, "===");
   } catch (error) {
     console.log(error);
