@@ -72,4 +72,8 @@ watch(numericValue, (newValue) => {
   }
   console.log("=======numericValue", numericValue);
 });
+
+watch(() => {
+  console.log("aaaaa");
+});
 </script>
