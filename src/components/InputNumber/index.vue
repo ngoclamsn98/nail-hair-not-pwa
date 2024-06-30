@@ -15,7 +15,7 @@
             :ariaDisabled="disabled"
             :disabled="disabled"
             @blur="onBlur"
-            type="text"
+            type="number"
             class="h-[42px] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 focus-visible:ring-blue-500 outline-none focus-visible:ring-1 disabled:bg-gray-100"
             :class="classes.input"
           />
@@ -57,8 +57,8 @@ watch(numericValue, (newValue) => {
     value.value = 0;
     return;
   }
-  const regex = new RegExp(/[^\d]/g);
-  numericValue.value = newValue.toString().replace(regex, "");
+  // const regex = new RegExp(/[^\d]/g);
+  // numericValue.value = newValue.toString().replace(regex, "");
   numericValue.value = numberWithCommas(+numericValue.value);
 
   if (numericValue.value.length >= MAX_LENGTH) {
